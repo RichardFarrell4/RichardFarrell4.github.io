@@ -14,7 +14,7 @@
 			user-select: none;
 			display: block;
 			position: absolute;
-			top: 10400px;
+			top: 400px;
 			left: 0px;  /* <--- Change me! */
 		}
 		.board{
@@ -76,12 +76,13 @@
 			*/
 			function update() {
 				posititionX = posititionX + speed;
-				points + points + 0;
 				moveBoxTo(posititionX)
-				if (conditionIsTrue){
+				if (posititionX>boardWidth){
 
 				}
-
+              if (posititionX<0 ) {
+				speed = speed * -1;
+			  }
 			};
 
 			/* 
@@ -91,7 +92,17 @@
 			*/
 			function handleBoxClick() {
 				
+				positionX = 0;
+                points = points +1;
+                changeBoxText (points);
+               if (speed > 0){
+                speed = speed + 3
+               }
+               if (speed < 0){
+                speed = speed - 3
+               }
 
+            };
 
 			};
 		})();
